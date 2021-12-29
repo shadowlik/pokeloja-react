@@ -12,7 +12,7 @@ const Pokemon = (props) => {
 
     return (
         <div className='poke-list-pokemon'>
-            <img src={imageUrl} />
+            <img src={imageUrl} alt={name} />
             <h2>{name}</h2>
             <p>{preco}</p>
         </div>
@@ -20,8 +20,6 @@ const Pokemon = (props) => {
 }
 
 export const Home = (props) => {
-
-
     const [state, setState] = useState({
         loading: true,
         pokemons: [],

@@ -5,22 +5,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../assets/scss/Navigation.scss';
 
 import logo from '../../assets/images/logo.png';
+import {  
+    Outlet,
+    Link,
+    useMatch,
+    useResolvedPath } from "react-router-dom";
+
+function CustomLink({ children, to, ...props }) {
+    let resolved = useResolvedPath(to);
+    let match = useMatch({ path: resolved.pathname, end: true });
+  
+    return (
+        <Link
+          className={match ? "active" : "" }
+          to={to}
+          {...props}
+        >
+          {children}
+        </Link>
+    );
+}
 
 export const Navigation = (props) => {
     return (
         <nav className="navigation">
             <div className='container'>
                 <div>
-                    <a href="#"><img className='logo' src={logo} alt="Pokémon" /></a>
+                <CustomLink to="/"><img className='logo' src={logo} alt="Pokémon" /></CustomLink>
                     <ul className='nav-links'>
                         <li>
-                            <a href='#'><span>Home</span></a>
+                            <CustomLink to="/"><span>Home</span></CustomLink>
                         </li>
                         <li>
-                            <a href='#'><span>Contato</span></a>
+                            <a><span>Contato</span></a>
                         </li>
                         <li>
-                            <a href='#'><span>Categorias</span></a>
+                            <a><span>Categorias</span></a>
                         </li>
                     </ul>
                 </div>
@@ -34,6 +54,7 @@ export const Navigation = (props) => {
                     </button>
                 </div>
             </div>
+            <Outlet />
         </nav>
     );
 }

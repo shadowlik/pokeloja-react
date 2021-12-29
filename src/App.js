@@ -9,8 +9,8 @@ import './assets/scss/App.scss';
 function App() {
   return (
     <div className="App">
-      <Navigation />
       <BrowserRouter>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="expenses" element={<Pokemon />} />

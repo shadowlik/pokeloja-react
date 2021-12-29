@@ -1,10 +1,13 @@
 .home {
     .poke-list {
+        margin: 30px 0;
         display: grid;
         gap: 20px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
 
         .poke-list-pokemon {
+            padding: 15px;
+            background: #FFF;
             img {
                 max-width: 100%;
             }

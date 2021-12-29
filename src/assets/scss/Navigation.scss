@@ -23,26 +23,27 @@
         align-self: stretch;
         margin-left: 30px;
         li {
-            border-bottom: solid 3px;
             display: flex;
             align-items: center;
             text-align: center;
-            &:hover {
+            &:hover a {
                 border-bottom: solid 6px;
             }
 
             &:nth-child(1) {
-                border-bottom-color: #FF0000;
-             
+                a { border-bottom-color: #FF0000 };
             }
             &:nth-child(2) {
-                border-bottom-color: #3B4CCA;
-               
+                a { border-bottom-color: #3B4CCA }; 
             }
             &:nth-child(3) {
-                border-bottom-color: #FFDE00;
+                a { border-bottom-color: #FFDE00 };
             }
             a {
+                &.active {
+                    border-bottom-width: 6px;
+                }
+                border-bottom: solid 3px;
                 align-self: stretch;
                 display: flex;
                 align-items: center;
