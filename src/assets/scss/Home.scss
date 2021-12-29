@@ -1,0 +1,13 @@
+.home {
+    .poke-list {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .poke-list-pokemon {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
