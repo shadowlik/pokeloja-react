@@ -4,7 +4,7 @@
 
 .cart-opened {
     .cart-overlay {
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
         background: rgba(0,0,0,0.8);
@@ -27,4 +27,30 @@
     background: #FFF;
     top: 0;
     z-index: 100;
+    padding: 0 15px;
+    overflow-x: auto;
+
+    .cart-title {
+        display: block;
+        padding: 10px 0;
+        font-weight: bold;
+        font-size: 26px;
+    }
+
+    .cart-empty {
+        border-top: solid 1px #ddd;
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    .cart-pokemon-item {
+        display: flex;
+        border-top: solid 1px #ddd;
+        padding: 10px 0;
+        img {
+            width: 70px;
+            align-self: center;
+            margin-right: 5px;
+        }
+    }
 }

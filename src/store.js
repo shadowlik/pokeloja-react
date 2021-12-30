@@ -13,11 +13,21 @@ export const counterSlice = createSlice({
     openCart: state => {
       state.open = true;
     },
-    closeCart: (state, action) => {
+    closeCart: (state) => {
       state.open = false;
     },
     addToCart: (state, action) => {
-      state.items.push(action);
+      const hasPokemonAdded = state.items.findIndex((pokemon) => pokemon.id === action.payload.id);
+
+      if (hasPokemonAdded > -1) {
+        state.items[hasPokemonAdded].qnty += 1;
+        return;
+      }
+
+      state.items.push({
+        qnty: 1,
+        ...action.payload
+      });
     }
   }
 })
