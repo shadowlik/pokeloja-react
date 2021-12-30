@@ -35,12 +35,27 @@
         padding: 10px 0;
         font-weight: bold;
         font-size: 26px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .pokeball {
+            margin-right: 10px;
+        };
+
+        .cart-close {
+            font-size: 14px;
+            &:hover {
+                color: red;
+                cursor: pointer;
+            }
+        }
     }
 
     .cart-empty {
         border-top: solid 1px #ddd;
-        padding: 10px 0;
-        font-size: 22px;
+        padding: 30px 0;
+        font-size: 18px;
+        text-align: center;
     }
 
     .cart-pokemon-item {
@@ -53,4 +68,42 @@
             margin-right: 5px;
         }
     }
+
+    .btn-buy {
+        border: 0;
+        width: 100%;
+        padding: 10px;
+        margin: 20px auto;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.2em;
+        color: #fff;
+        background: #8bbc37;
+        -webkit-box-shadow: 0 3px 1px #64950d;
+        -moz-box-shadow: 0 3px 1px #64950d;
+        box-shadow: 0 3px 1px #64950d;
+        cursor: pointer;
+        &:hover {
+          -webkit-transition: background-color 1s ease-in;
+          -moz-transition: background-color 1s ease-in;
+          -o-transition: background-color 1s ease-in;
+          transition: background-color 1s ease-in;
+          margin-top: 22px;
+          margin-bottom: -2px;
+        }
+  
+        &:hover {
+          background: #85b237;
+        }
+        &:active {
+          -webkit-box-shadow: 0 1px 1px #64950d;
+          -moz-box-shadow: 0 1px 1px #64950d;
+          box-shadow: 0 1px 1px #64950d;
+        }
+      }
 }

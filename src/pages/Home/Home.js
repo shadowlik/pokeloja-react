@@ -15,7 +15,9 @@ const Pokemon = (props) => {
     const price = Math.floor(name.length / 2 * 100);
 
 
-    const buy = () => {
+    const buy = (e) => {
+        e.stopPropagation();
+
         dispatch(addToCart({
             id,
             name,
@@ -26,11 +28,12 @@ const Pokemon = (props) => {
     }
 
     return (
-        <div className='poke-list-pokemon'>
+        <div onClick={() => alert('')} className='poke-list-pokemon'>
             <img src={imageUrl} alt={name} />
-            <h2>{name}</h2>
-            <p>{price}</p>
-            <button onClick={buy}>Comprar</button>
+            <h2 className='poke-name'>{name}</h2>
+            <p className='poke-price-from'>R$ {price},00</p>
+            <p className='poke-price-to'>R$ {price * 0.8},00</p>
+            <button className='btn-buy' onClick={buy}>Capturar</button>
         </div>
     )
 }

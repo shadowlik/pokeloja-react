@@ -12,7 +12,7 @@ import {
     useMatch,
     useResolvedPath
 } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function CustomLink({ children, to, ...props }) {
     let resolved = useResolvedPath(to);
@@ -31,6 +31,7 @@ function CustomLink({ children, to, ...props }) {
 
 export const Navigation = (props) => {
     const dispatch = useDispatch();
+    const pokemons = useSelector(state => state.cart.items);
 
     return (
         <nav className="navigation">
@@ -55,7 +56,8 @@ export const Navigation = (props) => {
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
                     <button onClick={() => dispatch(toggleCart())} className="btn-cart">
-                        <FontAwesomeIcon icon={faShoppingCart} />
+                        <div className="pokeball"></div>
+                        {pokemons.length > 0 && <span className="pokeball-count">{pokemons.length}</span>}
                     </button>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+import { faTimes} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 
 import { closeCart } from "../../store";
@@ -6,13 +8,21 @@ export const Cart = (props) => {
     const pokemons = useSelector(state => state.cart.items);
 
     const dispatch = useDispatch();
-    console.log(pokemons)
+    
+    const cartClose = () => dispatch(closeCart());
+
     return (
         <div>
-            <div onClick={() => dispatch(closeCart())} className="cart-overlay"></div>
+            <div onClick={cartClose} className="cart-overlay"></div>
             <div className="cart">
-                <span className="cart-title">Carrinho</span>
-                {pokemons.length === 0 && <div className="cart-empty">Seu carinho está vazio</div>}
+                <div className="cart-title">
+                    <div className="pokeball"></div>
+                    <span>Pokebola</span>
+                    <div className="cart-close" onClick={cartClose}>
+                        <FontAwesomeIcon icon={faTimes} />
+                    </div>
+                </div>
+                {pokemons.length === 0 && <div className="cart-empty">Sua Pokebola está vazia</div>}
 
                 {pokemons.length > 0 && <div>
                     {pokemons.map((pokemon) => <div className="cart-pokemon-item">
@@ -24,7 +34,7 @@ export const Cart = (props) => {
                         </div>
                     </div>)}
                     <p>Total: R$ XXXXX,XX</p>
-                    <button>Finalizar compra</button>
+                    <button className="btn-buy">Finalizar compra</button>
                 </div>}
             </div>
         </div>

@@ -61,12 +61,86 @@
     }
 
     .btn-cart {
+        position: relative;
         background: none;
         border: 0;
         cursor: pointer;
         font-size: 20px;
+        &:active, &:focus {
+            border: 0;
+            outline: 0;
+        }
         &:hover {
             color: #73ac31;
         }
+
+        .pokeball-count {
+            background-color: rgb(88, 194, 46);
+            color: rgb(255, 255, 255);
+            position: absolute;
+            right: -3px;
+            top: 3px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+}
+
+// Pokeball: https://codepen.io/bad_printer/pen/Einpz
+.pokeball {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-image: -moz-radial-gradient(40% 40%, circle, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, 1) 100%), -moz-linear-gradient(-90deg, #f33 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+    background-image: -webkit-radial-gradient(40% 40%, circle, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, 1) 100%), -webkit-linear-gradient(-90deg, #f33 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 6;
+        width: 20%;
+        height: 20%;
+        background-color: #FFF;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px #AAA, 0 0 0 3px #fff, 0 0 0 3px #3f3f3f;
+        margin: 40%;
+    }
+    
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 1;
+        width: 94%;
+        height: 10%;
+        background-color: rgba(0, 0, 0, 0);
+        margin: 45% 3%;
+        box-shadow: 3px 0 0 #FFF, -4px 0 0 #FFF;
+    }
+
+    &:hover {
+        animation: shake .3s infinite;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        -webkit-transform: rotate(-10deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(10deg);
     }
 }

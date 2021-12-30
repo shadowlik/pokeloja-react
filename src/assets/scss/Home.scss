@@ -1,16 +1,88 @@
-.home {
-    .poke-list {
-        margin: 30px 0;
-        display: grid;
-        gap: 20px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+$red: #ff0000;
 
-        .poke-list-pokemon {
-            padding: 15px;
-            background: #FFF;
-            img {
-                max-width: 100%;
-            }
+.home {
+  .poke-list {
+    width: 100%;
+    margin: 30px 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    .poke-list-pokemon {
+        padding: 15px;
+    background: #fff;
+      cursor: pointer;
+      transition: all ease-in .2s;
+      outline: solid 4px transparent;
+      text-align: center;
+      img {
+        max-width: 90%;
+        transition: all ease-in .2s;
+      }
+
+      &:hover {
+        outline: solid 4px #BDBDBD;
+        img {
+            transform: scale(1.1);
         }
+      }
+      .poke-name {
+          text-transform: capitalize;
+          text-align: left;
+          margin: 10px 0;
+      }
+     .poke-price-from {
+        text-decoration: line-through;
+        font-size: 14px;
+        color: #bbb;
+        text-align: left;
+        margin: 0;
+     }
+     .poke-price-to {
+        font-size: 18px;
+        font-weight: bolder;
+        color: #64950d;
+        text-align: left;
+        margin: 0;
+     }
     }
+
+    .btn-buy {
+      border: 0;
+      width: 100%;
+      padding: 10px;
+      margin: 20px auto;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.2em;
+      color: #fff;
+      background: #8bbc37;
+      -webkit-box-shadow: 0 3px 1px #64950d;
+      -moz-box-shadow: 0 3px 1px #64950d;
+      box-shadow: 0 3px 1px #64950d;
+      cursor: pointer;
+      &:hover {
+        -webkit-transition: background-color 1s ease-in;
+        -moz-transition: background-color 1s ease-in;
+        -o-transition: background-color 1s ease-in;
+        transition: background-color 1s ease-in;
+        margin-top: 22px;
+        margin-bottom: -2px;
+      }
+
+      &:hover {
+        background: #85b237;
+      }
+      &:active {
+        -webkit-box-shadow: 0 1px 1px #64950d;
+        -moz-box-shadow: 0 1px 1px #64950d;
+        box-shadow: 0 1px 1px #64950d;
+      }
+    }
+  }
 }
