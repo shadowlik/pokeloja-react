@@ -63,5 +63,10 @@
     .btn-cart {
         background: none;
         border: 0;
+        cursor: pointer;
+        font-size: 20px;
+        &:hover {
+            color: #73ac31;
+        }
     }
 }

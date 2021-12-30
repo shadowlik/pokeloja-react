@@ -1,10 +1,14 @@
 import '../../assets/scss/Home.scss';
 import { useEffect, useState } from "react";
+import { useDispatch } from 'react-redux';
+import { toggleCart } from '../../store';
 
 
 import { PokemonApi } from "../../services/api";
 
 const Pokemon = (props) => {
+    const dispatch = useDispatch();
+
     const name = props.name;
     const id = props.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '');
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
@@ -15,6 +19,7 @@ const Pokemon = (props) => {
             <img src={imageUrl} alt={name} />
             <h2>{name}</h2>
             <p>{preco}</p>
+            <button onClick={() => dispatch(toggleCart())}>Comprar</button>
         </div>
     )
 }
