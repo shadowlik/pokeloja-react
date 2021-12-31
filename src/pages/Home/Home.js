@@ -39,24 +39,22 @@ const Pokemon = (props) => {
 }
 
 export const Home = (props) => {
-    const [state, setState] = useState({
-        loading: true,
-        pokemons: [],
-    })
+    const [loading, setLoading] = useState(true)
+    const [pokemons, setPokemons] = useState([])
     
     useEffect(() => {
         PokemonApi.listPokemons().then(({data}) => {
-            setState({
-                loading: false,
-                pokemons: data.results.map((pokemon, key) => <Pokemon key={key} name={pokemon.name} url={pokemon.url} />),
-            })
+            setLoading(false)
+            setPokemons(data.results.map(
+                (pokemon, key) => <Pokemon key={key} name={pokemon.name} url={pokemon.url} />)
+            )
         })
     }, [])
 
     return (
         <div className="container home">
             <div className="poke-list">
-                {state.pokemons}
+                {pokemons}
             </div>
         </div>
     );
