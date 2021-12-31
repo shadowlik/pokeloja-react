@@ -1,6 +1,6 @@
 export const Contact = (props) => {
     return (
-        <div className="container">
+        <div className="contact">
             <form>
                 <input placeholder="Nome" />
                 <input placeholder="Email" />

@@ -1,0 +1,12 @@
+.pokemon {
+    flex-direction: column;
+    .pokemon-info {
+        background-color: #FFF;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        img {
+            align-self: flex-start;
+        }
+    }
+}

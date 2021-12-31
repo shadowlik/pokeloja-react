@@ -42,7 +42,7 @@ export const Cart = (props) => {
                 {pokemons.length === 0 && <div className="cart-empty">Sua Pokebola está vazia</div>}
 
                 {pokemons.length > 0 && <div>
-                    {pokemons.map((pokemon) => <CartItem item={pokemon} />)}
+                    {pokemons.map((pokemon, index) => <CartItem key={index} item={pokemon} />)}
                     <p className="cart-total"><span>Total:</span> <span>R$ {total}</span></p>
 
                     <button className="btn-buy">Finalizar compra</button>

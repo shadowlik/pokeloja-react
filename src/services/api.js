@@ -13,7 +13,7 @@ export const PokemonApi = {
             }
         });
     },
-    getPokemonById: (id, offset = 0, limit = 20) => {
+    getPokemonById: (id) => {
         return axios.get(`/pokemon/${id}`);
     }
 };

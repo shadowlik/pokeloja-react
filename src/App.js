@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Navigation } from './components/Navigation';
 import { Cart } from "./components/Cart";
+import { Sidebar } from './components/Sidebar';
 
 import { Home } from './pages/Home';
 import { About } from "./pages/About";
@@ -25,7 +26,7 @@ function App() {
   }
 
   useEffect(() => {
-    document.addEventListener("keydown", keydown, true);  
+    document.addEventListener("keydown", keydown, true);
     return () => window.removeEventListener("keydown", keydown, true);
   });
 
@@ -33,12 +34,15 @@ function App() {
     <div className={`App ${cartOpened ? 'cart-opened' : ''}`}>
       <BrowserRouter>
         <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<About />} />
-          <Route path="/contato" element={<Contact />} />
-          <Route path="/pokemon/:id" element={<Pokemon />} />
-        </Routes>
+        <section className="app-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<About />} />
+            <Route path="/contato" element={<Contact />} />
+            <Route path="/pokemon/:id" element={<Pokemon />} />
+          </Routes>
+          <Sidebar />
+        </section>
         <Cart />
       </BrowserRouter>
     </div>
