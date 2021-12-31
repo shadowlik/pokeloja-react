@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
 
 import { Navigation } from './components/Navigation';
 import { Cart } from "./components/Cart";
@@ -11,23 +10,10 @@ import { Contact } from './pages/Contact';
 
 import './assets/scss/App.scss';
 import './assets/scss/Cart.scss';
-import { useEffect } from "react";
-import { closeCart } from "./store";
+import { useFloatingCart } from "./hooks/useFloatingCart.hook";
 
 function App() {
-  const cartOpened = useSelector(state => state.cart.open);
-  const dispatch = useDispatch();
-
-  const keydown = (e) => {
-    if (e.code === 'Escape') {
-      dispatch(closeCart());
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener("keydown", keydown, true);  
-    return () => window.removeEventListener("keydown", keydown, true);
-  });
+  const {cartOpened} = useFloatingCart();
 
   return (
     <div className={`App ${cartOpened ? 'cart-opened' : ''}`}>
