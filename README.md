@@ -1,8 +1,8 @@
-# Pokestore React Project - Awari Fullstack Course
+# PokeStore React Project - Awari Fullstack Course
 
 > https://shadowlik.github.io/pokeloja-react
 
-Basic store (list pokemons, pokemon page, add to cart) using the REST API [PokéAPI](https://pokeapi.co/) as our backend.
+Basic react ecommerce (list pokemons, pokemon page, add to cart) using the REST API [PokéAPI](https://pokeapi.co/) as our backend.
 
 ## Instructor
 
