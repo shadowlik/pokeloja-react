@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Navigation } from './components/Navigation';
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className={`App ${cartOpened ? 'cart-opened' : ''}`}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Navigation />
         <section className="app-main">
           <Routes>
@@ -44,7 +44,7 @@ function App() {
           <Sidebar />
         </section>
         <Cart />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
