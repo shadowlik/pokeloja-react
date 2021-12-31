@@ -2,7 +2,7 @@
 
 > https://shadowlik.github.io/pokeloja-react
 
-Basic react ecommerce (list pokemons, pokemon page, add to cart) using the REST API [PokéAPI](https://pokeapi.co/) as our backend.
+Basic [React](https://pt-br.reactjs.org/) ecommerce (list pokemons, pokemon details, add to cart) using the REST API [PokéAPI](https://pokeapi.co/) as our backend.
 
 ## Instructor
 
