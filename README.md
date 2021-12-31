@@ -1,8 +1,8 @@
-# Pokestore React Frontend Project - Awari Fullstack Course
+# Pokestore React Project - Awari Fullstack Course
 
+Basic store (list pokemons, pokemon page, add to cart) using the REST API [PokéAPI](https://pokeapi.co/) as our backend.
 
 ## Instructor
-
 
 <table>
     <tr>
@@ -11,11 +11,10 @@
  <img width="200px" src="https://avatars.githubusercontent.com/u/6046356?s=400&u=5249b21021be63a09e37e9366ab2d093bd50b37a&v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/></a>
         </td>
         <td>
-        Henrique Marques - Software Engineer and inventor in his spare time. Passionate about technology and enthusiastic about open source projects, I'm always looking for new challenges.
+        <a href="https://github.com/shadowlik">Henrique Marques</a> - Software Engineer and inventor in his spare time. Passionate about technology and enthusiastic about open source projects, I'm always looking for new challenges.
         </td>
     </tr>
 </table>
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
