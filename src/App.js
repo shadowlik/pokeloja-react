@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className={`App ${cartOpened ? 'cart-opened' : ''}`}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Navigation />
         <section className="app-main">
           <Routes>
