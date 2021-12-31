@@ -52,9 +52,6 @@ export const Navigation = (props) => {
                 </div>
 
                 <div>
-                    <button className="btn-search">
-                        <FontAwesomeIcon icon={faSearch} />
-                    </button>
                     <button onClick={() => dispatch(toggleCart())} className="btn-cart">
                         <div className="pokeball"></div>
                         {pokemons.length > 0 && <span className="pokeball-count">{pokemons.length}</span>}

@@ -5,6 +5,7 @@ export const counterSlice = createSlice({
   initialState: {
     open: false,
     items: [],
+    total: 0,
   },
   reducers: {
     toggleCart: state => {
@@ -21,13 +22,15 @@ export const counterSlice = createSlice({
 
       if (hasPokemonAdded > -1) {
         state.items[hasPokemonAdded].qnty += 1;
-        return;
+       
+      } else {
+        state.items.push({
+          qnty: 1,
+          ...action.payload
+        });
       }
 
-      state.items.push({
-        qnty: 1,
-        ...action.payload
-      });
+      state.total = state.items.reduce((pv, item) => pv + item.price * item.qnty, 0)
     }
   }
 })

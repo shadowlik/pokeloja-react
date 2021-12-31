@@ -27,23 +27,23 @@
     background: #FFF;
     top: 0;
     z-index: 100;
-    padding: 0 15px;
+    padding: 10px 15px;
     overflow-x: auto;
 
     .cart-title {
         display: block;
         padding: 10px 0;
         font-weight: bold;
-        font-size: 26px;
+        font-size: 18px;
+        text-transform: uppercase;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .pokeball {
-            margin-right: 10px;
-        };
+        border-bottom: solid 1px #ddd;
 
         .cart-close {
-            font-size: 14px;
+            font-size: 12px;
+            color: #999;
             &:hover {
                 color: red;
                 cursor: pointer;
@@ -54,18 +54,53 @@
     .cart-empty {
         border-top: solid 1px #ddd;
         padding: 30px 0;
-        font-size: 18px;
+        font-size: 14px;
         text-align: center;
     }
 
     .cart-pokemon-item {
         display: flex;
-        border-top: solid 1px #ddd;
+        border-bottom: solid 1px #ddd;
         padding: 10px 0;
+        align-items: center;
+        justify-content: space-between;
+        .cart-pokemon-item-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            p:first-child {
+                text-transform: uppercase;
+                font-size: 14px;
+                color: #333;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            p:nth-child(2) {
+                font-weight: bold;
+                margin: 0;
+                .qnty {
+                    color: #999;
+                }
+            }
+        }
         img {
-            width: 70px;
+            width: 80px;
             align-self: center;
             margin-right: 5px;
+        }
+    }
+
+    .cart-total {
+        padding: 15px 0;
+        margin: 0;
+        border-bottom: solid 1px #ddd;
+        display: flex;
+        justify-content: space-between;
+        span:nth-child(1) {
+            color: #999;
+        }
+        span:nth-child(2) {
+            font-weight: bold;
         }
     }
 

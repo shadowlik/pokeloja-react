@@ -22,7 +22,7 @@ const Pokemon = (props) => {
             id,
             name,
             imageUrl,
-            price,
+            price: price * 0.8,
         }))
         dispatch(toggleCart());
     }
@@ -39,24 +39,50 @@ const Pokemon = (props) => {
 }
 
 export const Home = (props) => {
+    // Pokemons per page
+    const limit = 20;
+    
     const [state, setState] = useState({
         loading: true,
         pokemons: [],
+        total: 0,
+        currentPage: 0,
+        totalPages: 0,
     })
     
     useEffect(() => {
-        PokemonApi.listPokemons().then(({data}) => {
-            setState({
+        PokemonApi.listPokemons(state.currentPage * limit, limit).then(({data}) => {
+            setState((prev) => ({
+                ...prev,
                 loading: false,
-                pokemons: data.results.map((pokemon, key) => <Pokemon key={key} name={pokemon.name} url={pokemon.url} />),
-            })
-        })
-    }, [])
+                total: data.count,
+                totalPages: Math.ceil(data.count / limit),
+                pokemons: [...prev.pokemons, ...data.results.map((pokemon, key) => <Pokemon key={key} name={pokemon.name} url={pokemon.url} />)],
+            }))
+        });
+
+    }, [state.currentPage]);
+
+    const loadMore = () => {
+        let page = state.currentPage;
+
+        if ((page + 1) >= state.totalPages) return;
+        
+        page +=1;
+
+        setState((prev) => ({
+            ...prev,
+            currentPage: page,
+        }));
+    };
 
     return (
         <div className="container home">
             <div className="poke-list">
                 {state.pokemons}
+            </div>
+            <div className='poke-list-pagination'>
+                {state.currentPage < state.totalPages &&<button onClick={loadMore}>Carregar mais</button>}
             </div>
         </div>
     );

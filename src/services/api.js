@@ -5,10 +5,15 @@ const axios = Axios.create({
 });
 
 export const PokemonApi = {
-    listPokemons: (options = {}) => {
-        return axios.get('/pokemon', options);
+    listPokemons: (offset = 0, limit = 20) => {
+        return axios.get('/pokemon', {
+            params: {
+                offset,
+                limit,
+            }
+        });
     },
-    getPokemonById: (id, options = {}) => {
-        return axios.get(`/pokemon/${id}`, options);
+    getPokemonById: (id, offset = 0, limit = 20) => {
+        return axios.get(`/pokemon/${id}`);
     }
 };
