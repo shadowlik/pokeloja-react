@@ -2,6 +2,7 @@
   "name": "pokeloja-react",
   "version": "0.1.0",
   "private": true,
+  "author": "Henrique Marques <henrique@marquesfernandes.com>",
   "homepage": "https://shadowlik.github.io/pokeloja-react",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
