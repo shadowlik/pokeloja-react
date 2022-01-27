@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/pokeloja-react/static/css/main.b9fb635d.css",
-    "main.js": "/pokeloja-react/static/js/main.2f207df6.js",
+    "main.js": "/pokeloja-react/static/js/main.881c2b17.js",
     "static/js/787.e9fd57b6.chunk.js": "/pokeloja-react/static/js/787.e9fd57b6.chunk.js",
     "static/media/logo.png": "/pokeloja-react/static/media/logo.6e16d9f880a29ddb97ae.png",
     "index.html": "/pokeloja-react/index.html",
     "main.b9fb635d.css.map": "/pokeloja-react/static/css/main.b9fb635d.css.map",
-    "main.2f207df6.js.map": "/pokeloja-react/static/js/main.2f207df6.js.map",
+    "main.881c2b17.js.map": "/pokeloja-react/static/js/main.881c2b17.js.map",
     "787.e9fd57b6.chunk.js.map": "/pokeloja-react/static/js/787.e9fd57b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b9fb635d.css",
-    "static/js/main.2f207df6.js"
+    "static/js/main.881c2b17.js"
   ]
 }
