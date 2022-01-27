@@ -15,7 +15,6 @@ const Pokemon = (props) => {
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
     const price = Math.floor(name.length / 2 * 100);
 
-
     const buy = (e) => {
         e.stopPropagation();
 

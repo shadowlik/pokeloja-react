@@ -1,6 +1,4 @@
 
-import { faShoppingCart, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toggleCart } from '../../store';
 
 import '../../assets/scss/Navigation.scss';
@@ -40,7 +38,7 @@ export const Navigation = (props) => {
                     <CustomLink to="/"><img className='logo' src={logo} alt="Pokémon" /></CustomLink>
                     <ul className='nav-links'>
                         <li>
-                            <CustomLink to="/"><span>Home</span></CustomLink>
+                            <CustomLink to="/"><span>Casa</span></CustomLink>
                         </li>
                         <li>
                             <CustomLink to="/sobre"><span>Sobre</span></CustomLink>
