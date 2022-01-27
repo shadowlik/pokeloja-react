@@ -14,7 +14,6 @@ export const Pokemon = (props) => {
         moves: [],
         stats: [],
         types: [],
-        stats: [],
     });
 
     useEffect(() => {
